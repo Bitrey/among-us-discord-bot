@@ -1,3 +1,5 @@
+const { MessageEmbed } = require("discord.js");
+
 const changeMute = (message, toBeMuted) => {
     return new Promise(async (resolve, reject) => {
         try {
@@ -59,7 +61,7 @@ const printHelp = (message, prefix) => {
         });
     }
 
-    const helpEmbed = new Discord.MessageEmbed()
+    const helpEmbed = new MessageEmbed()
         .setColor("#0099ff")
         .setTitle("Among Us Bot")
         .setURL("https://github.com/Bitrey/among-us-discord-bot")
