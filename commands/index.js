@@ -49,6 +49,22 @@ const endGame = message => {
         .catch(err => message.channel.send("Something went wrong: " + err));
 };
 
+const printHelp = (message, prefix) => {
+    const commandFields = commands.map(command => ({
+        name: (prefix || "") + command.names[0],
+        value: command.description
+    }));
+
+    const helpEmbed = new Discord.MessageEmbed()
+        .setColor("#0099ff")
+        .setTitle("Among Us Bot")
+        .setURL("https://github.com/Bitrey/among-us-discord-bot")
+        .setDescription("Among Us Bot command list")
+        .addFields(commandFields);
+
+    message.channel.send(helpEmbed);
+};
+
 const commands = {
     start: {
         names: ["start", "start-game", "startgame"],
@@ -73,6 +89,11 @@ const commands = {
     changePrefix: {
         names: ["change-prefix"],
         description: "Change the bot prefix"
+    },
+    printHelp: {
+        names: ["help"],
+        description: "Print all commands and their description",
+        execute: printHelp
     }
 };
 
