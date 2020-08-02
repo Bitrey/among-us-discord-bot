@@ -67,7 +67,7 @@ const printHelp = (message, prefix) => {
         .setURL("https://github.com/Bitrey/among-us-discord-bot")
         .setDescription("Among Us Bot command list")
         .addFields(commandFields)
-        .setFooter("By Bitrey");
+        .setFooter("Coded by Bitrey - Invented by Spuzzolo_98");
 
     message.channel.send(helpEmbed);
 };
