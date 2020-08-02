@@ -29,7 +29,7 @@ const checkCommand = message => {
             if (typedCommand.startsWith(commandName)) {
                 // Change prefix feature
                 if (typedCommand === "change-prefix")
-                    return changePrefix(message);
+                    return changePrefix(message, prefix);
 
                 command.execute(message);
                 break commandListLoop;
