@@ -54,7 +54,7 @@ const endGame = message => {
 const printHelp = (message, prefix) => {
     const commandFields = [];
 
-    for (const [key, command] of Object.entries(commands)) {
+    for (const [_key, command] of Object.entries(commands)) {
         commandFields.push({
             name: (prefix || "") + command.names[0],
             value: command.description
@@ -66,7 +66,8 @@ const printHelp = (message, prefix) => {
         .setTitle("Among Us Bot")
         .setURL("https://github.com/Bitrey/among-us-discord-bot")
         .setDescription("Among Us Bot command list")
-        .addFields(commandFields);
+        .addFields(commandFields)
+        .setFooter("By Bitrey");
 
     message.channel.send(helpEmbed);
 };
