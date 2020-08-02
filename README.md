@@ -1,1 +1,1 @@
-# among-us-discord-bot
+# Among Us Discord Bot
