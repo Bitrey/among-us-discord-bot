@@ -50,10 +50,14 @@ const endGame = message => {
 };
 
 const printHelp = (message, prefix) => {
-    const commandFields = commands.map(command => ({
-        name: (prefix || "") + command.names[0],
-        value: command.description
-    }));
+    const commandFields = [];
+
+    for (const [key, command] of Object.entries(commands)) {
+        commandFields.push({
+            name: (prefix || "") + command.names[0],
+            value: command.description
+        });
+    }
 
     const helpEmbed = new Discord.MessageEmbed()
         .setColor("#0099ff")
